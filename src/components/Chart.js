@@ -7,7 +7,7 @@ const Chart = () => {
   const chartState = useSelector((state) => state.chart);
   const dispatch = useDispatch();
   let total = 0;
-  for (let i = 0; i < chartState.items.length; i++) {
+  for (let i = 0; i < chartState?.items?.length; i++) {
     total += chartState.items[i].price;
   }
 

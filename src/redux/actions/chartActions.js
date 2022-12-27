@@ -33,6 +33,7 @@ export const deleteFromChart = (dispatch, product) => {
     JSON.stringify({ items: filteredItems })
   );
   dispatch({ type: "DELETE_FROM_CHART", payload: filteredItems });
+  console.log(filteredItems,"filteredItems");
 };
 
 export const emptyChart = (dispatch) => {
