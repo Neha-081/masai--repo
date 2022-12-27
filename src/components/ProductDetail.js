@@ -1,17 +1,17 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { getBrands } from "../redux/actions/brandsActions";
 import { addToChart } from "../redux/actions/chartActions";
 
 const ProductDetail = (props) => {
-  const brandsState = useSelector((state) => state.brands);
   const dispatch = useDispatch();
 
   const product = props.location.product;
   let brandName;
   useEffect(() => {
     dispatch(getBrands);
+    // eslint-disable-next-line
   }, []);
   return (
     <div

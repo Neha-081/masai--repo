@@ -1,5 +1,5 @@
 let initialState = JSON.parse(window.localStorage.getItem("chart"));
-if (initialState == undefined) {
+if (initialState === undefined) {
   initialState = {
     items: [],
   };
@@ -20,6 +20,10 @@ export const chartReducer = (state = initialState, action) => {
       return {
         items: [],
       };
+    case "ORDER_FROM_CART":
+      return {
+        items: action.payload
+      }
     default:
       return state;
   }

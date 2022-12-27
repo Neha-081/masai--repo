@@ -60,3 +60,12 @@ code {
 .chart-delete-button:hover {
   box-shadow: 0px 1px 2px 1px rgba(197, 197, 197, 0.74);
 }
+.buy-now {
+  background-color:blanchedalmond;
+  border: 2px solid rgb(160, 109, 34);
+  outline: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}

@@ -14,7 +14,7 @@ export const deleteFromChart = (dispatch, product) => {
   let index = 0;
   let filteredItems = [];
   for (let i = 0; i < items.length; i++) {
-    if (items[i].id != product.id) {
+    if (items[i].id !== product.id) {
       filteredItems[index] = items[i];
       index++;
     } else {
@@ -39,4 +39,8 @@ export const emptyChart = (dispatch) => {
   window.localStorage.clear();
   window.localStorage.setItem("chart", JSON.stringify({ items: [] }));
   dispatch({ type: "EMPTY_CHART" });
+};
+
+export const orderFromCart = (dispatch, product) => {
+  dispatch({ type: "ORDER_FROM_CART", payload: product });
 };

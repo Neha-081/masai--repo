@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { addToChart } from "../redux/actions/chartActions";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
-  const [isHover, setIsHover] = useState(false);
   return (
     <div className="col mt-5">
       <div
         className="card p-2"
-        onMouseEnter={() => setIsHover(true)}
-        onMouseLeave={() => setIsHover(false)}
       >
         <Link to={{ pathname: `/product-detail/${product.id}`, product: product }}>
           <img src={product.image} className="card-img-top" alt="..." />

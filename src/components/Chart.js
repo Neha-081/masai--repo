@@ -1,16 +1,22 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteFromChart, emptyChart } from "../redux/actions/chartActions";
 import { Link } from "react-router-dom";
 
 const Chart = () => {
   const chartState = useSelector((state) => state.chart);
+  const chartStatee = useSelector((state) => state);
+  console.log(chartStatee, "chartState")
   const dispatch = useDispatch();
   let total = 0;
   for (let i = 0; i < chartState.items.length; i++) {
     total += chartState.items[i].price;
   }
-  //I should filter array here.
+
+
+  const onBuyClick = () => {
+    alert("Successfully Ordered");
+  }
 
   return (
     <div
@@ -29,7 +35,7 @@ const Chart = () => {
           padding: "2rem",
         }}
       >
-        <h1 className="text-center">Chart</h1>
+        <h1 className="text-center">Cart</h1>
         <div>
           {chartState.items.map((item, index) => {
             return (
@@ -56,6 +62,7 @@ const Chart = () => {
                 <h3 style={{ color: "rgb(253, 188, 68)" }}>
                   ${item.price.toFixed(2)}
                 </h3>
+                <button className="buy-now" onClick={onBuyClick}>Buy Now</button>
                 <button
                   className="chart-delete-button"
                   onClick={() =>
@@ -69,7 +76,7 @@ const Chart = () => {
           })}
         </div>
         <div className="mt-5">
-          {chartState.items.length == 0 && (
+          {chartState.items.length === 0 && (
             <p className="text-center">
               Chart is empty. <Link to="/">Click here</Link> for shopping{" "}
             </p>
@@ -77,7 +84,7 @@ const Chart = () => {
         </div>
 
         <div>
-          {chartState.items.length != 0 && (
+          {chartState.items.length !== 0 && (
             <div
               style={{
                 display: "flex",
@@ -91,7 +98,7 @@ const Chart = () => {
                 className="btn btn-outline-danger"
                 onClick={() => dispatch(emptyChart)}
               >
-                Empty Chart
+                Empty Cart
               </button>
               <h1 style={{ color: "rgb(253, 188, 68)" }}>
                 Total: ${total.toFixed(2)}
