@@ -27,15 +27,6 @@ const ProductDetail = (props) => {
         <div className="big-image">
           <img src={product.image} alt="" />
         </div>
-        <div
-          className="small-images"
-          style={{
-            marginTop: "20px",
-            display: "flex",
-            justifyContent: "space-evenly",
-          }}
-        >
-        </div>
       </div>
       <div className="phone-content" style={{ marginLeft: "40px" }}>
         <h3>{product.title}</h3>
@@ -44,45 +35,9 @@ const ProductDetail = (props) => {
         </h3>
         <div>
           <p style={{ margin: "0" }}>
-            <b>Description</b>
-          </p>
-          {/* <p style={{ margin: "0" }}>{product.description}</p> */}
-        </div>
-        <div>
-          <p style={{ margin: "0" }}>
             <b>Brand</b>
           </p>
-          <p style={{ margin: "0" }}>{brandName}</p>
-        </div>
-        <div>
-          <p style={{ margin: "0" }}>
-            <b>Camera</b>
-          </p>
-          <p style={{ margin: "0" }}>{product.camera}</p>
-        </div>
-        <div>
-          <p style={{ margin: "0" }}>
-            <b>CPU</b>
-          </p>
-          <p style={{ margin: "0" }}>{product.cpu}</p>
-        </div>
-        <div>
-          <p style={{ margin: "0" }}>
-            <b>Memory</b>
-          </p>
-          <p style={{ margin: "0" }}>{product.memory}</p>
-        </div>
-        <div>
-          <p style={{ margin: "0" }}>
-            <b>Display</b>
-          </p>
-          <p style={{ margin: "0" }}>{product.display}</p>
-        </div>
-        <div>
-          <p style={{ margin: "0" }}>
-            <b>Battery</b>
-          </p>
-          <p style={{ margin: "0" }}>{product.battery}</p>
+          <p style={{ margin: "0" }}>{product.brand}</p>
         </div>
         <div style={{ marginTop: "20px" }}>
           <button

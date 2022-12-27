@@ -20,9 +20,7 @@ const ProductList = () => {
     const url = `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-products`;
     try {
       const { data } = await Axios.get(url);
-      console.log(data.data);
       setProductsData(data.data);
-      // setLoading(false);
       return data;
     } catch (e) {
       console.error('getProductsInfo error\n', e);

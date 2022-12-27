@@ -5,14 +5,11 @@ import { Link } from "react-router-dom";
 
 const Chart = () => {
   const chartState = useSelector((state) => state.chart);
-  const chartStatee = useSelector((state) => state);
-  console.log(chartStatee, "chartState")
   const dispatch = useDispatch();
   let total = 0;
   for (let i = 0; i < chartState.items.length; i++) {
     total += chartState.items[i].price;
   }
-
 
   const onBuyClick = () => {
     alert("Successfully Ordered");
@@ -37,7 +34,7 @@ const Chart = () => {
       >
         <h1 className="text-center">Cart</h1>
         <div>
-          {chartState.items.map((item, index) => {
+          {chartState?.items?.map((item, index) => {
             return (
               <div
                 key={index}
@@ -56,7 +53,7 @@ const Chart = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <img src={item.images} style={{ width: "50px" }} alt="" />
+                  <img src={item.image} style={{ width: "50px" }} alt="" />
                 </div>
                 <p>{item.title}</p>
                 <h3 style={{ color: "rgb(253, 188, 68)" }}>
