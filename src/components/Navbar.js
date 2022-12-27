@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const chartState = useSelector((state) => state.chart);
+  console.log(chartState,"chartState")
   return (
     <div>
       <nav className="navbar fixed-top navbar-dark bg-secondary mb-5">
@@ -30,7 +31,7 @@ const Navbar = () => {
                 lineHeight: "12px",
               }}
             >
-              {chartState?.items?.length}
+              {chartState.items.length ? chartState?.items?.length : 0}
             </span>
           </Link>
         </div>
