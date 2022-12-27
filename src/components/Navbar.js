@@ -30,7 +30,7 @@ const Navbar = () => {
                 lineHeight: "12px",
               }}
             >
-              {chartState.items.length}
+              {chartState?.items?.length}
             </span>
           </Link>
         </div>
