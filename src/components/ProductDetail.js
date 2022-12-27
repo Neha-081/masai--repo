@@ -8,7 +8,6 @@ const ProductDetail = (props) => {
   const dispatch = useDispatch();
 
   const product = props.location.product;
-  let brandName;
   useEffect(() => {
     dispatch(getBrands);
     // eslint-disable-next-line
